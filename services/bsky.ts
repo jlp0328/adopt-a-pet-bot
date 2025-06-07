@@ -74,15 +74,16 @@ export async function createPost(petDetails: TransformedPet): Promise<boolean> {
     const introSentence = getRandomIntro(petDetails.name, petDetails.species)
 
     const { text, facets } = new RichtextBuilder()
-      .addText(`${introSentence} ${formattedName}, located in ${petDetails.contact.address.city}, ${petDetails.contact.address.state}.\n\nLearn more: `)
+      .addText(`${introSentence} ${formattedName}, located in ${petDetails.contact.address.city},${petDetails.contact.address.state}.\n\nLearn more: `)
       .addLink(shortUrl, shortUrl)
       .addText('\n\n')
-      .addTag('CrisisDogsNC')
-      .addTag('RescueDog')
-      .addTag('WakeCounty')
-      .addTag('RaleighNC')
-      .addTag('CharlotteNC')
-      .addTag('AshevilleNC')
+      .addTag('CrisisDogsNC ')
+      .addTag('RescueDog ')
+      .addTag('WakeCounty ')
+      .addTag('RaleighNC ')
+      .addTag('DurhamNC ')
+      .addTag('CharlotteNC ')
+      .addTag('AshevilleNC ')
       .build()
 
     const record = {
