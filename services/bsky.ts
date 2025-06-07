@@ -76,6 +76,7 @@ export async function createPost(petDetails: TransformedPet): Promise<boolean> {
     const { text, facets } = new RichtextBuilder()
       .addText(`${introSentence} ${formattedName}, located in ${petDetails.contact.address.city}, ${petDetails.contact.address.state}.\n\nLearn more: `)
       .addLink(shortUrl, shortUrl)
+      .addText('\n\n')
       .addTag('CrisisDogsNC')
       .addTag('RescueDog')
       .addTag('WakeCounty')
