@@ -4,6 +4,7 @@ import { createPost } from './bsky.js'
 
 export async function getRandomPet(token: string, retryCount = 0): Promise<void> {
   const MAX_RETRIES = 3
+  const PETFINDER_ID = process.env.CRISISDOGSNC;
 
   try {
     if (retryCount >= MAX_RETRIES) {
@@ -11,7 +12,7 @@ export async function getRandomPet(token: string, retryCount = 0): Promise<void>
       return
     }
 
-    const response = await fetch(`${ANIMALS_URL}?organization=NC1004&sort=random&limit=1`, {
+    const response = await fetch(`${ANIMALS_URL}?organization=${PETFINDER_ID}&sort=random&limit=1`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
