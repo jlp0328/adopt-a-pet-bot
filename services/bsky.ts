@@ -74,7 +74,7 @@ export async function createPost(petDetails: TransformedPet): Promise<boolean> {
     const introSentence = getRandomIntro(petDetails.name, petDetails.species)
 
     const { text, facets } = new RichtextBuilder()
-      .addText(`${introSentence} ${formattedName}, located in ${petDetails.contact.address.city}, ${petDetails.contact.address.state}.\n\nLearn more: `)
+      .addText(`${introSentence} ${formattedName}, located in ${petDetails.contact.address.city}, ${petDetails.contact.address.state}.\n\n #CrisisDogsNC #WakeCounty #RaleighNC #CharlotteNC #MecklenburgCounty #AshevilleNC #RescueDog \n\nLearn more: `)
       .addLink(shortUrl, shortUrl)
       .build()
 
