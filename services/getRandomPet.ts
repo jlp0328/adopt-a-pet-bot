@@ -11,7 +11,7 @@ export async function getRandomPet(token: string, retryCount = 0): Promise<void>
       return
     }
 
-    const response = await fetch(`${ANIMALS_URL}?sort=random&limit=1`, {
+    const response = await fetch(`${ANIMALS_URL}?organization=NC1004&sort=random&limit=1`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
