@@ -75,13 +75,13 @@ export async function createPost(petDetails: TransformedPet): Promise<boolean> {
 
     const { text, facets } = new RichtextBuilder()
       .addText(`${introSentence} ${formattedName}, located in ${petDetails.contact.address.city}, ${petDetails.contact.address.state}.\n\nLearn more: `)
+      .addLink(shortUrl, shortUrl)
       .addTag('CrisisDogsNC')
       .addTag('RescueDog')
       .addTag('WakeCounty')
       .addTag('RaleighNC')
       .addTag('CharlotteNC')
       .addTag('AshevilleNC')
-      .addLink(shortUrl, shortUrl)
       .build()
 
     const record = {
